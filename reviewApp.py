@@ -1,5 +1,5 @@
 # 関数の定義
-def post_review():
+def post_review(): # レビューの投稿
     # 変数の定義
     post = {} #空の辞書の宣言
 
@@ -20,32 +20,28 @@ def post_review():
     print("タイトル : " + post["title"] + line)
     print("感想 : \n" + post["review"] + line)
 
-
 def read_review():
-    # まだ処理内容が決まっていない
+    # レビューを読む まだ処理内容が決まっていない
     pass
 
 def exception():
+    # エラー処理
     print("入力した値は無効な値です")
 
+while True:
+    # メニューの表示
+    print("レビュー数：0")
+    print("[0]レビューを書く")
+    print("[1]レビューを読む")
+    print("[2]アプリを終了する")
+    user_input = int(input())
 
-# メニューの表示
-print("レビュー数：0")
-print("[0]レビューを書く")
-print("[1]レビューを読む")
-print("[2]アプリを終了する")
-user_input = int(input())
-
-
-if user_input == 0:
-    post_review() # post_review関数の呼び出し
-    
-elif user_input == 1:
-    read_review() # read_review関数の呼び出し
-
-elif user_input == 2:
-    exit
-
-else:
-    exception() # exception関数の呼び出し
+    if user_input == 0:
+        post_review() # post_review関数の呼び出し
+    elif user_input == 1:
+        read_review() # read_review関数の呼び出し
+    elif user_input == 2:
+        exit()  # ここでプログラムが終わる
+    else:
+        exception() # exception関数の呼び出し
     
