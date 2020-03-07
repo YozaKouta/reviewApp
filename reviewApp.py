@@ -19,6 +19,9 @@ def post_review(): # レビューの投稿
     print("\nジャンル : " + post["genre"] + line)
     print("タイトル : " + post["title"] + line)
     print("感想 : \n" + post["review"] + line)
+    
+    # リストオブジェクトに追加
+    posts.append(post)
 
 def read_review():
     # レビューを読む まだ処理内容が決まっていない
@@ -28,9 +31,11 @@ def exception():
     # エラー処理
     print("入力した値は無効な値です")
 
+posts = []      # 複数のレビューを持つリストオブジェクト
+
 while True:
     # メニューの表示
-    print("レビュー数：0")
+    print("レビュー数："+ str(len(posts)))
     print("[0]レビューを書く")
     print("[1]レビューを読む")
     print("[2]アプリを終了する")
